@@ -1,17 +1,36 @@
-# Smart-Calculator-Voice-Controlled
+# Smart-Calculator-Voice-Controlled:
+Here is a detailed explanation of the code:
 
- The provided code outlines a smart calculator capable of voice-controlled operations, implemented using Python programming language. It utilizes the SpeechRecognition and Pygame libraries to enable speech recognition and graphical user interface elements, respectively.
+# Importing Libraries :
 
-The code structure involves defining functions for speech recognition, mathematical calculations, and displaying results. The main function orchestrates these components to create a seamless user experience.
+ The code begins by importing essential libraries that form the foundation of the calculator's functionality:
 
-The speech recognition function employs the SpeechRecognition library to capture and interpret spoken commands. It converts the captured audio into text and extracts the numerical values and operators.
+Tkinter:  This library provides the graphical user interface (GUI) components and event handling mechanisms for the calculator.
 
-The mathematical calculations function handles the actual computations, taking the extracted numerical values and operators from the speech recognition function. It performs the corresponding arithmetic operations and returns the result.
+math: This library provides mathematical functions and constants required for calculations.
 
-The display results function utilizes the Pygame library to create a graphical interface and display the calculated result. It generates a visually appealing output that is easily understood by the user.
+pygame.mixer: This library enables playing audio files, which is used for auditory feedback when pressing the microphone button.
 
-The main function integrates these functions to achieve the overall functionality of the smart calculator. It starts by initializing the speech recognizer and Pygame modules. Then, it enters a continuous loop that listens for voice commands.
+speech_recognition: This library facilitates speech recognition, allowing the calculator to respond to voice commands.
 
-Upon receiving a voice command, the speech recognition function is activated to extract the numerical values and operators. These extracted values are then passed to the mathematical calculations function to perform the necessary computations.
+threading: This library enables running tasks in parallel, which is utilized for handling speech recognition in a separate thread.
 
-The resulting calculation is finally passed to the display results function, which generates a visual representation of the outcome on the user's screen. This completes the cycle of voice command interpretation, calculation, and result presentation.
+# Function Definitions :
+
+The code defines several functions that handle specific aspects of the calculator's behavior:
+
+click(): This function responds to button clicks. It takes the button value as input and performs the corresponding action, such as adding a digit, performing an operation, or clearing the entry field.
+
+add(), sub(), mul(), div(), mod(), lcm(), and hcf(): These functions perform basic mathematical operations like addition, subtraction, multiplication, division, modulo, least common multiple, and highest common factor.
+
+extraxt_from_text(): This function extracts numerical values from a text string, splitting it into words and converting each word that can be interpreted as a number into a float value.
+
+audio(): This function handles speech recognition. It initializes the speech recognition engine, listens to the microphone, and recognizes spoken words. It then identifies mathematical operations in the recognized text and performs the corresponding calculations, updating the entry field with the result.
+
+audio_thread(): This function creates a separate thread to handle speech recognition, allowing the calculator to remain responsive while waiting for voice commands.
+
+# Main Calculator Logic
+
+The main part of the code sets up the GUI layout and initializes the calculator's components. It creates the main window, adds logo and entry field widgets, and defines button widgets for numbers, operations, and special functions. It also creates a microphone button that triggers the speech recognition thread when clicked.
+
+The mainloop() method starts the event loop, allowing the calculator to respond to user interactions, including button clicks and speech commands. When a button is clicked, the click() function is called to handle the corresponding action. When the microphone button is clicked, the audio_thread() function is called to start the speech recognition process.
