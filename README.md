@@ -1,7 +1,7 @@
 # Smart-Calculator-Voice-Controlled:
 Here is a detailed explanation of the code:
 
-# Importing Libraries :
+# Imported Libraries :
 
  The code begins by importing essential libraries that form the foundation of the calculator's functionality:
 
