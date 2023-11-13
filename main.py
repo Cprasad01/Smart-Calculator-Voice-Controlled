@@ -27,11 +27,11 @@ def click(value):
         elif value == 'x!':
             answer = m.factorial(eval(ex))
         elif value == 'sinθ':
-            answer = str(m.sin(eval(ex)))
+            answer = str(m.sin(m.radians(eval(ex))))
         elif value == 'cosθ':
-            answer = str(m.cos(eval(ex)))
+            answer = str(m.cos(m.radians(eval(ex))))
         elif value == 'tanθ':
-            answer = str(m.tan(eval(ex)))
+            answer = str(m.tan(m.radians(eval(ex))))
         elif value == 'π':
             answer = m.pi
         elif value == '2π':
